@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --primarycolor: #FCE101;
+    --secondarycolor: #101010;
+    --font1: "Mulish", serif;
+    --font2: "Roboto", serif;
+    --nav_link_hover: #FCE10126;
+}
+
+
+
+
+#navbar-section-1{
+    padding: 10px;
+    background-image: url("../../Assests//nav_1_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(
+        to right, 
+        var(--primarycolor) 0%,
+        var(--primarycolor) 50%,
+        var(--secondarycolor)50%,
+        var(--secondarycolor) 100%
+    ); */
+}
+
+#navbar-section-1-div-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar-section-1-div-1-1{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#navbar-section-1-div-1-1-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#navbar-section-1-div-1-1-1-1-email{
+    font-size: 20px;
+}
+
+#navbar-section-1-div-1-1-1-2-p-1{
+    margin-bottom: 0px;
+    font-family: var(--font1);
+font-size: 16px;
+font-weight: 600;
+color: var(--secondarycolor);
+}
+
+#navbar-section-1-div-1-1-2{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+#navbar-section-1-div-1-1-2-1-phone{
+    font-size: 16px;
+}
+
+#navbar-section-1-div-1-1-2-2-p-1{
+    margin-bottom: 0px;
+    font-family: var(--font1);
+font-size: 16px;
+font-weight: 600;
+color: var(--secondarycolor);
+}
+
+
+#navbar-section-1-div-1-2{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#navbar-section-1-div-1-2-twitter{
+    color: var(--primarycolor);
+}
+
+#navbar-section-1-div-1-2-facebook{
+    color: var(--primarycolor);
+}
+
+#navbar-section-1-div-1-2-linkedin{
+    color: var(--primarycolor);
+}
+
+#navbar-section-1-div-1-2-instagram{
+    color: var(--primarycolor);
+}
+
+
+@media(max-width: 769px){
+    #navbar-section-1{
+        display: none;
+    }
+}
+
+/* Section 2 */
+
+
+#nav-logo{
+    width: 220px;
+}
+
+#navbar-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+#nav-link{
+    font-family: var(--font2);
+    font-size: 15px;
+    font-weight: 500;  
+    color: var(--secondarycolor);
+}
+
+#nav-link:hover{
+    background-color: var(--nav_link_hover);
+}
+
+#d-flex-get_start{
+    border: none;
+    background-color: var(--primarycolor);
+    color: var(--secondarycolor);
+    font-family: var(--font2);
+font-size: 15px;
+font-weight: 500;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+
+
+@media(max-width: 769px){
+    #navbar-nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    #d-flex{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
