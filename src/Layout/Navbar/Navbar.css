@@ -7,9 +7,14 @@
     --font1: "Mulish", serif;
     --font2: "Roboto", serif;
     --nav_link_hover: #FCE10126;
+    --background-color: #ffffff;
 }
 
-
+#navbar{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
 
 
 #navbar-section-1{
@@ -17,13 +22,6 @@
     background-image: url("../../Assests//nav_1_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    /* background: linear-gradient(
-        to right, 
-        var(--primarycolor) 0%,
-        var(--primarycolor) 50%,
-        var(--secondarycolor)50%,
-        var(--secondarycolor) 100%
-    ); */
 }
 
 #navbar-section-1-div-1{
@@ -109,6 +107,9 @@ color: var(--secondarycolor);
 
 /* Section 2 */
 
+#navbar-2{
+    background-color: var(--background-color);
+}
 
 #nav-logo{
     width: 220px;
@@ -130,6 +131,7 @@ color: var(--secondarycolor);
 
 #nav-link:hover{
     background-color: var(--nav_link_hover);
+  border-radius: 20px;
 }
 
 #d-flex-get_start{

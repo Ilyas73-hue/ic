@@ -48,7 +48,7 @@ function Navbar() {
        </div>
       </div>
 
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg" id="navbar-2">
   <div class="container">
     <a class="navbar-brand" href="#"><img id="nav-logo" src={ic_logo} alt={ic_logo} /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,13 +57,13 @@ function Navbar() {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0" id="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" id="nav-link" href="#">Home</a>
+          <a class="nav-link" id="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="nav-link" href="#">About us</a>
+          <a class="nav-link" id="nav-link" href="/about">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="nav-link" href="#">Service</a>
+          <a class="nav-link" id="nav-link" href="/service">Service</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="nav-link" href="#">Career</a>
