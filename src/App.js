@@ -7,10 +7,16 @@ import Service from './Component/Service/Service';
 import Footer from './Layout/Footer/Footer';
 import Navbar from './Layout/Navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
- 
+import {Helmet} from "react-helmet";
+
+
 function App() {
   return (
     <div className="App">
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Iconnect technology</title>
+            </Helmet>
       <Router>
       <Navbar />
       <Switch>
