@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./Home.css";
 import home_carousel_img_1 from "../../Assests/home_ic_bg_1.jpeg";
 import home_carousel_img_2 from "../../Assests/home_ic_bg_2.jpeg";
@@ -29,11 +29,22 @@ import project_completed from "../../Assests/project_completed.png";
 import project_deliverd from "../../Assests/project_delivered.png";
 import { FaStar } from "react-icons/fa";
 import client_work from "../../Assests/client_review.png";
-
+import { motion } from "framer-motion";
+import { fadeBigIn, fadeSmallIn } from "./../../variants";
 
 
 
 function Home() {
+
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 769px)").matches
+  )
+
+  useEffect(() => {
+    window
+    .matchMedia("(max-width: 769px)")
+    .addEventListener('change', e => setMatches( e.matches ));
+  }, []);
 
   const service_data =[{
     id: 1,
@@ -151,21 +162,41 @@ const client_review =[{
     </div>
     <div id="carousel-content">
         <div id="carousel-content-1">
-          <div className='container' id="carousel-content-1-div-1">
+          <motion.div
+           variants={matches ? fadeSmallIn("right") :fadeBigIn("right")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          className='container' id="carousel-content-1-div-1">
           <p id="carousel-content-1-div-1-p-1">Welcome to Iconnect Technology</p>
           <div id="carousel-content-1-div-1-line">
 
           </div>
-          </div>
-          <div className='container' id="carousel-content-1-div-2">
+          </motion.div>
+          <motion.div
+           variants={matches ? fadeSmallIn("right") :fadeBigIn("right")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          className='container' id="carousel-content-1-div-2">
            <h6 id="carousel-content-1-div-2-h6-1">Innovative Software Solutions to Transform Your Business</h6>
-          </div>
-          <div className='container' id="carousel-content-1-div-3">
+          </motion.div>
+          <motion.div
+           variants={matches ? fadeSmallIn("right") :fadeBigIn("right")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          className='container' id="carousel-content-1-div-3">
            <p id="carousel-content-1-div-3-p-1">We build powerful, scalable, and intuitive software that streamlines operations and accelerates growth.</p>
-          </div>
-          <div className='container' id="carousel-content-1-div-3">
+          </motion.div>
+          <motion.div
+           variants={matches ? fadeSmallIn("right") :fadeBigIn("right")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          className='container' id="carousel-content-1-div-3">
             <button id="carousel-content-1-div-3-button">More Details</button>
-          </div>
+          </motion.div>
         </div>
     </div>
    
@@ -184,14 +215,19 @@ const client_review =[{
 <section id="home-section-2">
    <div className='container' id="home-section-2-div-1">
     {service_data.map((item) => (
-    <div id="home-section-2-div-1-1">
+    <motion.div
+    variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+    initial="hidden"
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7 }}
+    id="home-section-2-div-1-1">
         <div id="home-section-2-div-1-1-1">
           <img id="home-section-2-div-1-1-1-img" src={item.img} alt={item.img} />
         </div>
         <div id="home-section-2-div-1-1-2">
          <p id="home-section-2-div-1-1-2-p-1">{item.name}</p>
         </div>
-     </div>
+     </motion.div>
     ))}
      
    </div>
@@ -201,7 +237,12 @@ const client_review =[{
 
 <section id="home-section-3">
    <div className='container' id="home-section-3-div-1">
-   <div id="home-section-3-div-1-1">
+   <motion.div
+    variants={matches ? fadeSmallIn("right") :fadeBigIn("right")}
+    initial="hidden"
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7 }}
+   id="home-section-3-div-1-1">
     <div id="home-section-3-div-1-1-1">
      <p id="home-section-3-div-1-1-1-p-1">About Us</p>
     </div>
@@ -237,10 +278,15 @@ const client_review =[{
       Read More
      </button>
     </div>
-   </div>
-   <div id="home-section-3-div-1-2">
+   </motion.div>
+   <motion.div
+    variants={!matches && fadeBigIn("left")}
+    initial="hidden"
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7 }}
+   id="home-section-3-div-1-2">
     <img id="home-section-3-div-1-2-img-1" src={about} alt={about} />
-   </div>
+   </motion.div>
    </div>
 </section> 
 
@@ -248,16 +294,31 @@ const client_review =[{
 
 <section id="home-section-4">
    <div className='container' id="home-section-4-div-1">
-       <div id="home-section-4-div-1-1">
+       <motion.div
+        variants={matches ? fadeSmallIn("down") :fadeBigIn("down")}
+        initial="hidden"
+        whileInView={'show'}
+        viewport={{ once: false, amount: 0.7 }}
+       id="home-section-4-div-1-1">
          <p id="home-section-4-div-1-1-p-1">Service</p>
-       </div>
-       <div id="home-section-4-div-1-2">
+       </motion.div>
+       <motion.div
+        variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+        initial="hidden"
+        whileInView={'show'}
+        viewport={{ once: false, amount: 0.7 }}
+       id="home-section-4-div-1-2">
         <p id="home-section-4-div-1-2-p-1">We provide Awesome Service</p>
-       </div>
+       </motion.div>
        <div id="home-section-4-div-1-3">
         {
           service_data_1.map((item) => (
-            <div id="home-section-4-div-1-3-1">
+            <motion.div
+            variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.7 }}
+            id="home-section-4-div-1-3-1">
             <div id="home-section-4-div-1-3-1-1">
             <img id="home-section-4-div-1-3-1-1-img-1" src={item.img} alt={item.img} />
             </div>
@@ -274,7 +335,7 @@ const client_review =[{
               <IoIosArrowForward id="home-section-4-div-1-3-1-4-arrow" />
             </div>
           
-          </div>
+          </motion.div>
           ))
         }
      
@@ -286,19 +347,40 @@ const client_review =[{
 
 <section id="home-section-5">
      <div className='container' id="home-section-5-div-1" >
-      <div id="home-section-5-div-1-1">
+      <motion.div
+       variants={!matches && fadeBigIn("right")}
+       initial="hidden"
+       whileInView={'show'}
+       viewport={{ once: false, amount: 0.7 }}
+      id="home-section-5-div-1-1">
        <img id="home-section-5-div-1-1-img" src={about} alt={about} />
-      </div>
-      <div id="home-section-5-div-1-2">
-         <div id="home-section-5-div-1-2-1">
+      </motion.div>
+      <div
+      id="home-section-5-div-1-2">
+         <motion.div
+          variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: false, amount: 0.7 }}
+         id="home-section-5-div-1-2-1">
            <p id="home-section-5-div-1-2-1-p-1">Why Choose Us</p>
-         </div>
-         <div id="home-section-5-div-1-2-2">
+         </motion.div>
+         <motion.div
+          variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: false, amount: 0.7 }}
+         id="home-section-5-div-1-2-2">
            <p id="home-section-5-div-1-2-2-p-1">With over 10 years of experience in IT services, I have specialized in developing software applications and branding for clients worldwide.</p>
-         </div>
+         </motion.div>
 
          <div id="home-section-5-div-1-2-3">
-          <div id="home-section-5-div-1-2-3-1">
+          <motion.div
+           variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          id="home-section-5-div-1-2-3-1">
           <div id="home-section-5-div-1-2-3-1-1">
             <img src={why_1} alt={why_1} />
            </div>
@@ -306,8 +388,13 @@ const client_review =[{
              <p id="home-section-5-div-1-2-3-1-1-p-1">Latest technologies</p>
              <p id="home-section-5-div-1-2-3-1-1-p-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Iure nulla dolorem,</p>
            </div>
-          </div> 
-          <div id="home-section-5-div-1-2-3-1">
+          </motion.div> 
+          <motion.div
+           variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          id="home-section-5-div-1-2-3-1">
           <div id="home-section-5-div-1-2-3-1-1">
             <img src={why_2} alt={why_2} />
            </div>
@@ -315,8 +402,13 @@ const client_review =[{
              <p id="home-section-5-div-1-2-3-1-1-p-1">Unique solutions</p>
              <p id="home-section-5-div-1-2-3-1-1-p-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Iure nulla dolorem,</p>
            </div>
-          </div>
-          <div id="home-section-5-div-1-2-3-1">
+          </motion.div>
+          <motion.div
+           variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          id="home-section-5-div-1-2-3-1">
           <div id="home-section-5-div-1-2-3-1-1">
             <img src={why_3} alt={why_3} />
            </div>
@@ -324,8 +416,13 @@ const client_review =[{
              <p id="home-section-5-div-1-2-3-1-1-p-1">Experience</p>
              <p id="home-section-5-div-1-2-3-1-1-p-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Iure nulla dolorem,</p>
            </div>
-          </div>
-          <div id="home-section-5-div-1-2-3-1">
+          </motion.div>
+          <motion.div
+           variants={matches ? fadeSmallIn("left") :fadeBigIn("left")}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{ once: false, amount: 0.7 }}
+          id="home-section-5-div-1-2-3-1">
           <div id="home-section-5-div-1-2-3-1-1">
             <img src={why_4} alt={why_4} />
            </div>
@@ -333,7 +430,7 @@ const client_review =[{
              <p id="home-section-5-div-1-2-3-1-1-p-1">Support</p>
              <p id="home-section-5-div-1-2-3-1-1-p-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Iure nulla dolorem,</p>
            </div>
-          </div>
+          </motion.div>
          </div>
          
 
@@ -344,7 +441,12 @@ const client_review =[{
 {/* Section 6 */}
 
 <section id="home-section-6">
-   <div className='container' id="home-section-6-div-1">
+   <motion.div
+    variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+    initial="hidden"
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7 }}
+   className='container' id="home-section-6-div-1">
     <div id="home-section-6-div-1-div-1">
      <div id="home-section-6-div-1-1">
       <img id="home-section-6-div-1-1-img" src={happy} alt={happy} />
@@ -372,23 +474,38 @@ const client_review =[{
       <p id="home-section-6-div-1-2-p-2">Deliver Result</p>
     </div>
     </div>
-   </div>
+   </motion.div>
 </section>
 
   {/* Section 7 */}
 
   <section id="home-section-7">
     <div className='container' id="home-section-7-div-1">
-     <div id="home-section-7-div-1-1">
+     <motion.div
+      variants={matches ? fadeSmallIn("down") :fadeBigIn("down")}
+      initial="hidden"
+      whileInView={'show'}
+      viewport={{ once: false, amount: 0.7 }}
+     id="home-section-7-div-1-1">
       <p id="home-section-7-div-1-1-p-1">Clients Review</p>
-     </div>
-     <div id="home-section-7-div-1-2">
+     </motion.div>
+     <motion.div
+      variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+      initial="hidden"
+      whileInView={'show'}
+      viewport={{ once: false, amount: 0.7 }}
+     id="home-section-7-div-1-2">
       <p id="home-section-7-div-1-2-p-1">What Our Customers Say</p>
-     </div>
+     </motion.div>
      <div id="home-section-7-div-1-3">
       {
         client_review.map((item) => (
-          <div id="home-section-7-div-1-3-1">
+          <motion.div
+          variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: false, amount: 0.7 }}
+          id="home-section-7-div-1-3-1">
           <div id="home-section-7-div-1-3-1-star">
            <FaStar id="home-section-7-div-1-3-1-star-ico"  />
            <FaStar id="home-section-7-div-1-3-1-star-ico" />
@@ -412,7 +529,7 @@ const client_review =[{
            <p id="home-section-7-div-1-3-5-p-1">{item.role}</p>
         </div>
   
-        </div>
+        </motion.div>
         ))
       }
 
@@ -425,8 +542,18 @@ const client_review =[{
 
   <section id="home-section-8">
      <div className='container' id="home-section-8-div-1">
-      <p id="home-section-8-div-1-p-1">Lets Create Your Project</p>
-      <button id="home-section-8-div-1-button">Contact us</button>
+      <motion.p
+       variants={matches ? fadeSmallIn("down") :fadeBigIn("down")}
+       initial="hidden"
+       whileInView={'show'}
+       viewport={{ once: false, amount: 0.7 }}
+      id="home-section-8-div-1-p-1">Lets Create Your Project</motion.p>
+      <motion.button
+       variants={matches ? fadeSmallIn("up") :fadeBigIn("up")}
+       initial="hidden"
+       whileInView={'show'}
+       viewport={{ once: false, amount: 0.7 }}
+      id="home-section-8-div-1-button">Contact us</motion.button>
      </div>
   </section>
 

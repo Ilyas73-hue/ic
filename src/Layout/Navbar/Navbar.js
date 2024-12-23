@@ -66,10 +66,10 @@ function Navbar() {
           <a class="nav-link" id="nav-link" href="/service">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="nav-link" href="#">Career</a>
+          <a class="nav-link" id="nav-link" href="/portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="nav-link" href="#">Contact</a>
+          <a class="nav-link" id="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
 
